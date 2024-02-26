@@ -1,0 +1,221 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    overflow-x: hidden;/* Hide overflow to prevent content from being visible before the transition */
+}
+
+.container {
+    max-width: 50%; /* Use a percentage for better responsiveness */
+    margin: 5% auto; /* Center the container vertically and horizontally */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px); /* Initially move container down to hide it */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Add transitions for opacity and transform */
+}
+
+body.loaded .container {
+    opacity: 1;
+    transform: translateY(0); /* Move container back to its original position */
+}
+
+/* ... (existing styles) ... */
+
+/* Slider styles */
+.switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #ed214a;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #ed214a;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .container {
+    background-color: #444;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* ... (rest of the styles) ... */
+
+
+
+
+
+
+h1 {
+    text-align: center;
+    color: #333;
+    opacity: 0;
+    transform: translateY(50%); /* Initially move h1 down to center of the page */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Add transitions for opacity and transform */
+}
+
+body.loaded h1 {
+    opacity: 1;
+    transform: translateY(0); /* Move h1 to the top of the page */
+}
+
+label:hover{
+    cursor: pointer;
+    color: gainsboro;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: inline-block;
+    width: 48%;
+    margin-right: 10px;
+    margin-bottom: 45px;
+    font-size: 25px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+legend{
+       font-size: 1.2em; /* Adjust font size */
+    margin-bottom: 0.5em;
+}
+
+button {
+    font-size: 15px;
+    background-color: #1fabab;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0b3030;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+
+/* ... (existing styles) ... */
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .container {
+    background-color: #444;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode h1 {
+    color: #fff; /* Adjust the color of h1 in dark mode */
+}
+
+/* ... (rest of the styles) ... */
+
+
+
+/* ... (existing styles) ... */
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
+    transition: background-color 0.5s, color 0.5s; /* Add transition for background and text color */
+}
+
+/* Light mode styles */
+body.light-mode #result {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Dark mode styles */
+body.dark-mode #result {
+    background-color: #333;
+    color: #fff;
+}
+
+/* ... (rest of the styles) ... */
+
+
+
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%; /* Adjust max-width for smaller screens */
+    }
+}
+
+/* ... (rest of the styles) ... */
